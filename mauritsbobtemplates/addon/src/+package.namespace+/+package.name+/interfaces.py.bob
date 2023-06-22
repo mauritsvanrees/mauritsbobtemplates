@@ -1,0 +1,5 @@
+from zope.publisher.interfaces.browser import IDefaultBrowserLayer
+
+
+class I{{{ package.browserlayer }}}(IDefaultBrowserLayer):
+    """Marker interface that defines a browser layer."""

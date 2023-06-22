@@ -1,0 +1,43 @@
+{{% for i in package.distributionname %}}={{% endfor %}}
+
+{{{ package.distributionname }}}
+{{% for i in package.distributionname %}}={{% endfor %}}
+
+
+{{{ package.description }}}
+
+Features
+--------
+
+- Can be bullet points
+
+
+Installation
+------------
+
+Install {{{ package.distributionname }}} by adding it to your buildout::
+
+    [buildout]
+
+    ...
+
+    eggs =
+        {{{ package.distributionname }}}
+
+
+and then running ``bin/buildout``.
+
+
+Contribute
+----------
+
+If you are having issues, or want to contribute a bugfix or feature, please let us know.
+
+- Issue Tracker: https://github.com/collective/{{{ package.distributionname }}}/issues
+- Source Code: https://github.com/collective/{{{ package.distributionname }}}
+
+
+License
+-------
+
+The project is licensed under the GPLv2.

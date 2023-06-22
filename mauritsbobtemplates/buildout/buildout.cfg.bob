@@ -1,0 +1,41 @@
+[buildout]
+extends =
+    base.cfg
+    http://dist.plone.org/release/{{{ plone.version }}}/versions.cfg
+# find-links +=
+#    http://dist.plone.org/release/{{{ plone.version }}}
+newest = false
+prefer-final = true
+show-picked-versions = true
+allow-picked-versions = true
+eggs =
+    Plone
+#    Products.CMFPlone
+develop =
+#    src/my.package
+parts =
+    instance
+    zopepy
+
+
+[instance]
+recipe = plone.recipe.zope2instance
+eggs =
+    Plone
+#    Products.CMFPlone
+zcml =
+http-address = 127.0.0.1:8080
+user = admin:admin
+debug-mode = off
+verbose-security = on
+# deprecation-warnings = on
+environment-vars =
+    zope_i18n_compile_mo_files true
+
+[zopepy]
+recipe = zc.recipe.egg
+eggs = ${instance:eggs}
+interpreter = zopepy
+scripts = zopepy
+
+[versions]
